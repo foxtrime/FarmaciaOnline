@@ -59,6 +59,7 @@
 		let remedio = $("#searchbox option:selected").attr("selected", "selected").text();
 		let farmacia = $("#searchbox option:selected").attr("selected", "selected").val();
 		
+		
 		console.log (remedio);
 	
 		let endereco ="procurar/" +remedio.trim();

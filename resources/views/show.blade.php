@@ -4,13 +4,12 @@
 
 <body>
 	<div class="content">
-      <div style="width: 87%;padding-left: 13%;padding-top: 9%;">
-
-			<table>
+      <div class="table-responsive">
+			<table class="table">
 				<thead>
 					<tr>
-						<th>Medicamento</th>
-						<th>Farmacia</th>
+						<th scope="col">Medicamento</th>
+						<th scope="col">Farmacia</th>
 					</tr>
 				</thead>
 				<tbody>
