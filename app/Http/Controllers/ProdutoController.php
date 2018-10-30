@@ -15,10 +15,14 @@ class ProdutoController extends Controller
         return view('welcome',compact('produto'));
    }
   
-   public function procurar($remedio)
+   public function procurar($resultado)
    {
-        //dd($remedio);
-        $dados = DB::table('view_produto_farmacia')->where('produto_farmacia' , '=', $remedio)->get();
+        $resultado = str_replace("*","/","$resultado");
+        $resultado = str_replace("!","%","$resultado");
+   
+            //dd($resultado);
+        
+        $dados = DB::table('view_produto_farmacia')->where('produto_farmacia' , '=', $resultado)->get();
         //dd($dados);
         return view('show',compact('dados'));
 

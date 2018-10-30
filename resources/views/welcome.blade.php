@@ -34,7 +34,7 @@
 
 					<div id="div_link" style="visibility:hidden;">
 						<b>Clique no nome do medicamento para saber onde encontrá-la</b><br>
-						<a href="https://www.w3schools.com" id="link">Visit W3Schools</a>
+						<a href="https://www.w3schools.com" id="link">Xesque Dele</a>
 					</div>
 
 
@@ -60,9 +60,12 @@
 		let farmacia = $("#searchbox option:selected").attr("selected", "selected").val();
 		
 		
-		console.log (remedio);
-	
-		let endereco ="procurar/" +remedio.trim();
+		var resultado = remedio.replace(/%/, "!")
+			.replace( /\//g , "*");
+		
+		console.log (resultado);
+		
+		let endereco ="procurar/" +resultado.trim();
 		
 		console.log (endereco);
 		$("#link").attr("href", endereco);

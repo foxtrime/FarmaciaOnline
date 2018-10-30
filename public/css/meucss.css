@@ -21,9 +21,16 @@
 }
 
 .footer {
-    position:absolute;
-    bottom:0;
-	width:100%;
+    text-align: center;
+    border: solid 1px Gray;
+    font-size:8pt;
+    font-family: Verdana;
+    font-weight:bold;
+    width:100%;
+    color:Black;
+    position:fixed;
+    bottom:0px;
+    left:0px;
 	background: #BFA15F;
 }
 
@@ -37,6 +44,7 @@
 
 .content {
     text-align: center;
+    padding-bottom: 43px;
     }
 
 .form-control{
