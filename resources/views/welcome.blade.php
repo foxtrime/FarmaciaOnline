@@ -3,8 +3,9 @@
 @section('content')
 
 <body>
+	<h1>FARMÁCIA ONLINE</h1>
 	<div class="content">
-      <div style="width: 87%;padding-left: 13%;padding-top: 9%;">
+      <div style="width: 87%;padding-left: 13%;padding-top: 7%;">
 				<h2 style="float: left;color: black;">Nome do medicamento</h2>
 				
 				<div >
@@ -60,7 +61,7 @@
 		let farmacia = $("#searchbox option:selected").attr("selected", "selected").val();
 		
 		
-		var resultado = remedio.replace(/%/, "!")
+		var resultado = remedio.replace(/%/g, "!")
 			.replace( /\//g , "*");
 		
 		console.log (resultado);

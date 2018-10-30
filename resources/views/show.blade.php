@@ -40,8 +40,9 @@
 					<tbody>
 						@foreach ($dados as $item)
 							<tr>
+								
 								<td>{{$item->produto_farmacia}}</td>	
-								<td>{{$item->farmacia}}</td>			
+								<td> <?=str_replace('ALMOXARIFADO', ' ', $item->farmacia)?> </td>		
 							</tr>
 						@endforeach
 					</tbody>
