@@ -17,6 +17,7 @@
 		<link rel="stylesheet" href="{{ asset('/css/meucss.css') }}">
 		
 		<script type="text/javascript" src='//code.jquery.com/jquery-1.10.2.min.js'></script>
+		
 		<script type="text/javascript" src='{{ url("selectize/js/standalone/selectize.min.js") }}'></script>
 	</head>
 	<body>
@@ -49,6 +50,9 @@
 				</table>
 			</div>
 		</div>
+		<div class="col-md-12" style="padding-bottom: 113px;">
+         <div id="map" style="position: relative;overflow: hidden;width: 100%;height: 293px;"></div>
+      </div>
 		<footer class="footer">
 			<div class="container-fluid">
 				<div class="rodape">
@@ -57,7 +61,68 @@
 				</div>
 			</div>
 		</footer>
+		<script type="text/javascript">
+			var map;
+			 var markers = [
+    {
+        "titulo": '<b>Farmacia Central</b>',
+        "lat": '-22.789784',
+        "lng": '-43.432581',
+        "description": 'Aqui e o espaço reservado para digitar o endereco.'
+    },
+    {
+        "titulo": '<b>Farmacia Polo I</b>',
+        "lat": '-22.785748',
+        "lng": '-43.424513',
+        "description": 'Aqui e o espaço reservado para digitar o endereco.'
+    },
+    {
+        "titulo": '<b>Farmacia Polo III</b>',
+        "lat": '-22.790715',
+        "lng": '-43.436295',
+        "description": 'Rua Dom Jaime Câmara 170 Sta. Terezinha Mesquita.'
+    },
+    {
+        "titulo": '<b>Farmacia Polo IV</b>',
+        "lat": '-22.783482',
+        "lng": '-43.430284',
+        "description": 'Rua Mister Watkins 63 Centro Mesquita.'
+    }];
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -22.782946, lng: -43.431588},
+          zoom: 14
+        });
+
+        var infoWindow = new google.maps.InfoWindow();
+ 		  
+ 		   for (var i = 0; i < markers.length; i++) {
+            var data = markers[i];
+            var myLatlng = new google.maps.LatLng(data.lat, data.lng);
+            var marker = new google.maps.Marker({
+                position: myLatlng,
+                map: map,
+                title: data.title
+            });
+ 
+            //Attach click event to the marker.
+            (function (marker, data) {
+                google.maps.event.addListener(marker, "click", function (e) {
+                    //Wrap the content inside an HTML DIV in order to set height and width of InfoWindow.
+                    infoWindow.setContent("<div style = 'width:200px;min-height:40px'>" + data.titulo +'<br><br>'+ data.description + "</div>");
+                    infoWindow.open(map, marker);
+                });
+            })(marker, data);
+        }
+      }
+
+
+		</script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcdW2PsrS1fbsXKmZ6P9Ii8zub5FDu3WQ
+&callback=initMap"
+    async defer></script>
 	</body>
 </html>
+
 
 
