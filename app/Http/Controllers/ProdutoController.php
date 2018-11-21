@@ -23,7 +23,7 @@ class ProdutoController extends Controller
         
         $dados = DB::table('view_produto_farmacia')
         ->where('produto_farmacia' , '=', $resultado)
-            ->whereIn('farmacia', ["FARMACIA CENTRAL","FARMÁCIA POLO I", "FARMACIA POLO III","FARMACIA POLO IV"])
+            ->whereIn('farmacia', ["FARMÁCIA POLO I", "FARMACIA POLO III","FARMACIA POLO IV"])
                 ->get();
         //dd($dados);
         //$dados = str_replace('ALMOXARIFADO', "","$resultado->farmacia");
