@@ -65,12 +65,6 @@
 			var map;
 			 var markers = [
     {
-        "titulo": '<b>Farmacia Central</b>',
-        "lat": '-22.789784',
-        "lng": '-43.432581',
-        "description": 'Aqui e o espaço reservado para digitar o endereco.'
-    },
-    {
         "titulo": '<b>Farmacia Polo I</b>',
         "lat": '-22.785748',
         "lng": '-43.424513',
