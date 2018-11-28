@@ -66,9 +66,9 @@
 			 var markers = [
     {
         "titulo": '<b>Farmacia Polo I</b>',
-        "lat": '-22.785748',
-        "lng": '-43.424513',
-        "description": 'Aqui e o espaço reservado para digitar o endereco.'
+        "lat": '-22.777651',
+        "lng": '-43.438677',
+        "description": 'Avenida Brasil S/Numero - Coréia, Mesquita - RJ.'
     },
     {
         "titulo": '<b>Farmacia Polo III</b>',
